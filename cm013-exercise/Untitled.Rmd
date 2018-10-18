@@ -118,6 +118,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
      labs(x = "Sepal Width",
           y = "Sepal Length",
           title = "Sepal sizes of three plant species")
+    theme_bw()
 ```
 
 2. Then, change font size of axis labels, and the strip background colour. Others?
@@ -130,8 +131,8 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
           y = "Sepal Length",
           title = "Sepal sizes of three plant species") +
     theme_bw() +
-    theme(FILL_IN_ARG_FOR_AXIS_TITLE = FILL_THIS_IN,
-          strip.background = FILL_THIS_IN)
+    theme(axis.text = element_text(size=16),
+          strip.background = element_rect(fill="orange"))
 ```
 
 
@@ -159,7 +160,8 @@ Consider the following plot:
 1. Convert it to a `plotly` object by applying the `ggplotly()` function:
 
 ```{r}
-FILL_THIS_IN
+library(plotly)
+ggplot(p)
 ```
 
 2. You can save a plotly graph locally as an html file. Try saving the above:
